@@ -1,0 +1,798 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body Styling */
+body {
+  background: linear-gradient(to right, rgb(27, 27, 32), #A64D79, #000);
+  font-family: 'Poppins', sans-serif;
+  color: #eeeeee;
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+/* Container Styling */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+@keyframes fadeInZoom {
+  from {
+      opacity: 0;
+      transform: scale(0.95);
+  }
+  to {
+      opacity: 1;
+      transform: scale(1);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+      opacity: 0;
+      transform: translateY(20px);
+  }
+  to {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+
+@keyframes fadeInLeft {
+  from {
+      opacity: 0;
+      transform: translateX(-20px);
+  }
+  to {
+      opacity: 1;
+      transform: translateX(0);
+  }
+}
+
+@keyframes fadeInRight {
+  from {
+      opacity: 0;
+      transform: translateX(20px);
+  }
+  to {
+      opacity: 1;
+      transform: translateX(0);
+  }
+}
+
+@keyframes fadeInUpCustom {
+  from {
+      opacity: 0;
+      transform: translateY(20px);
+  }
+  to {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+
+/* Kelas awal untuk elemen yang akan dianimasikan */
+.animate-on-scroll {
+  opacity: 0;
+  transform: scale(0.95);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+/* Kelas yang akan ditambahkan ketika elemen masuk ke viewport */
+.animate {
+  animation: fadeInZoom 0.6s forwards;
+}
+
+/* Tambahan untuk animasi spesifik */
+.animate-fadeInUp {
+  animation: fadeInUp 0.6s forwards;
+}
+
+.animate-fadeInLeft {
+  animation: fadeInLeft 0.6s forwards;
+}
+
+.animate-fadeInRight {
+  animation: fadeInRight 0.6s forwards;
+}
+
+.animate-fadeInUpCustom {
+  animation: fadeInUpCustom 0.6s forwards;
+}
+
+/* ====================================
+ Navbar Styles
+ ==================================== */
+
+/* Navbar Container */
+.navbar {
+  background: linear-gradient(to right, rgb(27, 27, 32), #A64D79, #000);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  text-shadow: 0 4px 6px rgba(255, 255, 255, 0.338);
+  position: fixed;
+  left: 0;
+  right: 0;
+  padding: 10px 0;
+}
+
+.navbar-brand {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 900;
+  font-size: 1.8rem;
+  color: #ffffff !important;
+  text-decoration: none;
+  padding-left: 20px;
+}
+
+.navbar-nav .nav-link {
+  font-size: 1rem;
+  color: #eeeeee;
+  text-decoration: none;
+  padding: 10px 15px;
+  transition: color 0.3s ease, background-color 0.3s ease;
+  border-radius: 4px;
+}
+
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-link:focus {
+  color: #00adb5;
+}
+
+.navbar-nav .nav-link.active {
+  color: #00adb5;
+  font-weight: 700;
+}
+
+.navbar-collapse {
+  justify-content: flex-end;
+}
+
+.navbar-nav {
+  flex-direction: row;
+}
+
+/* Adjust the navbar on smaller screens (responsiveness) */
+@media (max-width: 768px) {
+  .navbar-nav {
+      text-align: center;
+      margin-top: 1rem;
+  }
+
+  .navbar-nav .nav-link {
+      padding: 12px 20px;
+      font-size: 1.2rem;
+  }
+}
+
+/* ====================================
+ Intro Section Styles
+ ==================================== */
+
+/* Intro Section Container */
+#intro {
+  position: relative;
+  min-height: 800px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem 0;
+  background-color: #000000;
+  color: #eeeeee;
+  text-shadow: 0 4px 6px rgba(237, 237, 237, 0.8);
+  overflow: hidden;
+}
+
+/* Background Overlay for Intro Section */
+#intro::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('icon/background.jpg');
+  background-size: cover;
+  background-position: center;
+  opacity: 0.5;
+  z-index: 1;
+}
+
+/* Intro Content Container */
+#intro .container {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  background: rgba(0, 0, 0, 0.5);
+  padding: 50px;
+  border-radius: 10px;
+}
+
+/* Intro Heading */
+#intro h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+/* Intro Paragraph */
+#intro p {
+  font-size: 1.25rem;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+/* ====================================
+ Section Headings
+ ==================================== */
+
+/* General Section Heading */
+.section-heading {
+  color: #16d4f6;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  font-size: 2.5rem;
+  text-align: center;
+  text-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+/* Animate Section Headings */
+.section-heading.animate__animated.animate__zoomIn {
+  animation-duration: 1s;
+}
+
+/* ====================================
+ Informasi Section Styles
+ ==================================== */
+
+/* Informasi Section Container */
+#informasi {
+  background: linear-gradient(to right, rgb(27, 27, 32), #A64D79, #000);
+  color: #ffffff;
+  padding: 3rem 1.5rem;
+  text-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+  font-size: 1rem;
+}
+
+/* Informasi Text */
+#informasi .informasi p {
+  color: #ffffff;
+  text-align: center;
+  margin-bottom: 1.5rem;
+  font-size: 1.1rem;
+  line-height: 1.8;
+}
+
+/* ====================================
+ Card Styles
+ ==================================== */
+
+/* General Card Styling */
+.card {
+  background-color: #3B1C32;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  overflow: hidden;
+}
+
+/* Card Hover Effect */
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(255, 255, 255, 0.2);
+}
+
+/* Card Image */
+.card-img-top {
+  max-height: 150px;
+  max-width: 150px;
+  object-fit: cover;
+  display: block;
+  margin: 1.5rem auto 0 auto;
+  border-radius: 8px;
+}
+
+/* Card Body */
+.card-body {
+  text-align: center;
+  padding: 1.5rem;
+  background-color: #ffffff;
+  border-radius: 0 0 15px 15px;
+}
+
+/* Card Title */
+.card-title {
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: #000000;
+  margin-bottom: 0.75rem;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+}
+
+/* Card Text */
+.card-text {
+  font-size: 1rem;
+  color: #000000;
+  line-height: 1.5;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* ====================================
+ Interactive Map Section Styles
+ ==================================== */
+
+/* Interactive Map Section Container */
+#interaktif-peta {
+  background: linear-gradient(to right, rgb(27, 27, 32), #A64D79, #000);
+  color: #eeeeee;
+  padding: 4rem 0;
+  position: relative;
+  z-index: 1;
+}
+
+/* Interactive Map Section Content */
+#interaktif-peta .card-body {
+  background-color: #eeeeee;
+  color: #222831;
+  padding: 0;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+/* Map Container */
+.map-container {
+  height: 500px;
+  border-radius: 20px;
+  overflow: hidden;
+  margin-top: 2rem;
+  background-color: #fff;
+  position: relative;
+  z-index: 2;
+}
+
+/* Leaflet Map Styling */
+#map {
+  width: 100%;
+  height: 100%;
+  border: 5px solid #3c1c2c;
+  border-radius: 20px;
+}
+
+/* ====================================
+ Keunggulan Section Styles
+ ==================================== */
+
+/* Keunggulan Section Container */
+#keunggulan {
+  color: #333333;
+  padding: 5rem 1.5rem;
+  text-align: center;
+}
+
+/* Keunggulan Section Heading */
+#keunggulan .section-heading {
+  color: #16d4f6;
+  font-size: 2.5rem;
+  margin-bottom: 3rem;
+  text-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+/* Keunggulan Cards */
+#keunggulan .card {
+  background-color: #3c1c2c;
+  border: 1px solid #dddddd;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  overflow: hidden;
+}
+
+#keunggulan .card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Keunggulan Card Image */
+#keunggulan .card-img-top {
+  max-height: 200px;
+  object-fit: cover;
+  width: 100%;
+  border-bottom: 1px solid #dddddd;
+}
+
+/* Keunggulan Card Body */
+#keunggulan .card-body {
+  padding: 1.5rem;
+}
+
+/* Keunggulan Card Title */
+#keunggulan .card-title {
+  font-size: 1.5rem;
+  color: #222831;
+  margin-bottom: 1rem;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* Keunggulan Card Text */
+#keunggulan .card-text {
+  font-size: 1rem;
+  color: #555555;
+  line-height: 1.6;
+}
+
+/* ====================================
+ Destinasi Section Styles
+ ==================================== */
+
+/* Destinasi Section Container */
+#destinasi {
+  background: linear-gradient(to right, rgb(27, 27, 32), #A64D79, #000);
+  color: #eeeeee;
+  padding: 5rem 1.5rem;
+  position: relative;
+  text-shadow: 0 4px 6px rgba(255, 255, 255, 0.338);
+}
+
+/* Destinasi Section Heading */
+#destinasi .section-heading {
+  color: #16d4f6;
+  font-size: 2.5rem;
+  margin-bottom: 3rem;
+  text-align: center;
+  text-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+/* Horizontal Scroll Container */
+.horizontal-scroll {
+  display: flex;
+  overflow-x: auto;
+  gap: 30px;
+  scroll-snap-type: x mandatory;
+  padding-bottom: 20px;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Hide Scrollbar */
+.horizontal-scroll::-webkit-scrollbar {
+  display: none;
+}
+
+/* Destination Card Styling */
+.destination-card {
+  background-color: #222831;
+  border-radius: 20px;
+  padding: 20px;
+  flex: 0 0 350px;
+  scroll-snap-align: start;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+/* Destination Card Hover Effect */
+.destination-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Destination Card Image */
+.destination-card img {
+  max-width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+/* Destination Card Title */
+.destination-card h4 {
+  font-size: 1.5rem;
+  color: #ffffff;
+  margin-bottom: 0.75rem;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+}
+
+/* Destination Card Description */
+.destination-card p {
+  font-size: 1rem;
+  color: #b0bec5;
+  margin-bottom: 1rem;
+  line-height: 1.6;
+}
+
+/* Destination Card Button */
+.destination-card .btn-accent {
+  background-color: #314463;
+  border: none;
+  color: #ffffff;
+  padding: 10px 20px;
+  border-radius: 5px;
+  text-decoration: none;
+  text-align: center;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.destination-card .btn-accent:hover {
+  background-color: #e68900;
+  transform: translateY(-3px);
+}
+
+/* ====================================
+ Contact Section Styles
+ ==================================== */
+
+/* Contact Section Container */
+#kontak {
+  background: linear-gradient(to right, rgb(27, 27, 32), #A64D79, #000);
+  color: #222831;
+  padding: 5rem 1.5rem;
+}
+
+/* Contact Section Heading */
+#kontak .section-heading {
+  color: #16d4f6;
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  text-align: center;
+  text-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+/* Contact Paragraph */
+#kontak p {
+  color: #ffffff;
+  font-size: 1.2rem;
+  text-align: center;
+  margin-bottom: 2rem;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* Contact Form */
+#kontak form {
+  max-width: 800px;
+  width: 100%;
+  margin: 0 auto;
+  background-color: #393e46;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+/* Form Labels */
+#kontak .form-label {
+  font-weight: 600;
+  color: #eeeeee;
+  margin-bottom: 0.5rem;
+}
+
+/* Form Inputs and Textareas */
+#kontak input,
+#kontak textarea {
+  border-radius: 8px;
+  border: 2px solid #ff97cb;
+  background-color: #222831;
+  color: #eeeeee;
+  width: 100%;
+  padding: 0.75rem;
+  margin-bottom: 1.5rem;
+  font-size: 1rem;
+  transition: border-color 0.3s ease, background-color 0.3s ease;
+}
+
+/* Placeholder Text */
+#kontak input::placeholder,
+#kontak textarea::placeholder {
+  color: #b0bec5;
+}
+
+/* Focus States for Inputs and Textareas */
+#kontak input:focus,
+#kontak textarea:focus {
+  border-color: #00adb5;
+  background-color: #393e46;
+  outline: none;
+}
+
+/* Submit Button */
+#kontak button.btn-accent {
+  background-color: #ff97cb;
+  color: #ffffff;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 50px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  cursor: pointer;
+}
+
+/* Submit Button Hover Effect */
+#kontak button.btn-accent:hover {
+  background-color: #018786;
+  transform: translateY(-3px);
+}
+
+/* ====================================
+ Footer Styles
+ ==================================== */
+
+/* Footer Container */
+footer {
+  background-color: #222831;
+  color: #eeeeee;
+  padding: 2rem 0;
+  text-align: center;
+  text-shadow: 0 4px 6px rgba(255, 255, 255, 0.338);
+}
+
+/* Footer Paragraphs */
+footer p {
+  margin: 0.5rem 0;
+  font-size: 1rem;
+}
+
+/* Footer Social Icons */
+footer .social-icons a {
+  margin: 0 10px;
+  color: #eeeeee;
+  transition: color 0.3s ease;
+  font-size: 1.2rem;
+}
+
+footer .social-icons a:hover {
+  color: #00adb5;
+}
+
+/* Footer Links */
+footer a {
+  color: #eeeeee;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+footer a:hover {
+  color: #00adb5;
+}
+
+/* ====================================
+ Media Queries for Responsiveness
+ ==================================== */
+
+@media (max-width: 1200px) {
+  /* Adjust container padding for larger screens */
+  .container {
+      padding: 0 1.5rem;
+  }
+}
+
+@media (max-width: 992px) {
+  /* Navbar adjustments for medium screens */
+  .navbar-nav {
+      gap: 0.75rem;
+  }
+
+  /* Adjust card image sizes */
+  .card-img-top {
+      max-height: 120px;
+      max-width: 120px;
+  }
+
+  /* Adjust section headings */
+  .section-heading {
+      font-size: 2.2rem;
+  }
+
+  /* Adjust destination card sizes */
+  .destination-card {
+      flex: 0 0 300px;
+  }
+}
+
+@media (max-width: 768px) {
+  /* Adjust container padding for tablets */
+  .container {
+      padding: 0 1rem;
+  }
+
+  /* Navbar adjustments for smaller screens */
+  .navbar {
+      flex-direction: column;
+      align-items: center;
+  }
+
+  .navbar-nav {
+      flex-direction: column;
+      gap: 0.5rem;
+  }
+
+  /* Adjust card image sizes */
+  .card-img-top {
+      max-height: 100px;
+      max-width: 100px;
+  }
+
+  /* Adjust section headings */
+  .section-heading {
+      font-size: 2rem;
+  }
+
+  /* Adjust destination card sizes */
+  .destination-card {
+      flex: 0 0 100%;
+      margin-bottom: 1.5rem;
+  }
+
+  /* Contact Form Padding */
+  #kontak form {
+      padding: 1.5rem;
+  }
+
+  /* Footer Font Size */
+  footer p {
+      font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 576px) {
+  /* Adjust intro section padding for mobile */
+  #intro {
+      padding: 2rem 1rem;
+  }
+
+  /* Adjust intro heading size */
+  #intro h1 {
+      font-size: 2.5rem;
+  }
+
+  /* Adjust intro paragraph size */
+  #intro p {
+      font-size: 1rem;
+  }
+
+  /* Adjust card titles */
+  .card-title {
+      font-size: 1.1rem;
+  }
+
+  /* Adjust card text */
+  .card-text {
+      font-size: 0.95rem;
+  }
+
+  /* Adjust keunggulan card titles */
+  #keunggulan .card-title {
+      font-size: 1.3rem;
+  }
+
+  /* Adjust keunggulan card text */
+  #keunggulan .card-text {
+      font-size: 0.95rem;
+  }
+
+  /* Adjust destination card titles */
+  .destination-card h4 {
+      font-size: 1.3rem;
+  }
+
+  /* Adjust destination card descriptions */
+  .destination-card p {
+      font-size: 0.95rem;
+  }
+}
