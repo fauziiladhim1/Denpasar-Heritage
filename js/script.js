@@ -1,5 +1,3 @@
-// js/script.js
-
 document.addEventListener("DOMContentLoaded", () => {
   initializeMap();
   setupFormSubmission();
@@ -57,7 +55,7 @@ function initializeMap() {
     .then((response) => response.json())
     .then((data) => {
       var jalan = L.geoJSON(data, {
-        style: { color: "blue", weight: 2 },
+        style: { color: "MidnightBlue", weight: 2 },
       }).addTo(map);
       overlayMaps["Jalan"] = jalan;
       layerControl.addOverlay(jalan, "Jalan"); // Tambahkan ke kontrol layer
@@ -69,7 +67,7 @@ function initializeMap() {
     .then((response) => response.json())
     .then((data) => {
       var adminDesa = L.geoJSON(data, {
-        style: { color: "green", weight: 2, fillOpacity: 0.1 },
+        style: { color: "Plum", weight: 2, fillOpacity: 0.3 },
       }).addTo(map);
       overlayMaps["Batas Administrasi Desa"] = adminDesa;
       layerControl.addOverlay(adminDesa, "Batas Administrasi Desa"); // Tambahkan ke kontrol layer

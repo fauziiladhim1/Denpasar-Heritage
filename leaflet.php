@@ -125,7 +125,7 @@ $conn->close();
 
         .card {
             background-color: #222;
-            border-radius: 12px;
+            border-radius: 15px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
             border: none;
             margin-bottom: 2rem;
@@ -292,7 +292,7 @@ $conn->close();
         }
 
         .destination-card {
-            max-width: 420px;
+            max-width: 415px;
             background-color: #1f1f1f;
             border-radius: 15px;
             box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
