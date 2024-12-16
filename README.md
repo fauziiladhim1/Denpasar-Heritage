@@ -63,6 +63,14 @@ Denpasar Heritage adalah aplikasi web interaktif yang dirancang untuk menampilka
    - **JALAN_LN_25K.geojson**: Menampilkan jaringan jalan di Denpasar.
    - **ADMINISTRASIDESA_AR.geojson**: Menampilkan batas administrasi desa di Denpasar.
 
+3. **Google Maps**
+   - Referensi untuk menentukan lokasi destinasi wisata dan batas administrasi desa.
+   - Referensi gambar pada lokasi destinasi wisata
+
+4. **Library Leaflet.JS**
+   - Untuk menampilkan peta interaktif dan memperluas fitur peta
+   - Untuk menampilkan lokasi destinasi wisata di peta
+
 ## Tangkapan Layar
 
 ### 1. Halaman Utama WEB GIS
